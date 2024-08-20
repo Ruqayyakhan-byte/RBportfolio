@@ -7,6 +7,7 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 
 function App() {
+  // happy 
   return (   
     <Router>
       <NavigationBar />
