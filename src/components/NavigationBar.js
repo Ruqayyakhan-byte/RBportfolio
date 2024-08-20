@@ -22,6 +22,9 @@ const NavigationBar = () => {
           <NavLink to="/contact" className="nav-link">Contact</NavLink>
         </Nav>
       </Navbar.Collapse>
+
+
+      
     </Navbar>
   );
 };
