@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div 
       className='container-fluid' 
-      style={{ backgroundColor: '#1d5463', padding: '20px', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+      style={{ backgroundColor: '#1d5463', padding: '20px', minHeight: '100vh',paddingLeft:'80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
     >
       <div style={{ flex: 1 }}>
         <h6>Hello, Welcome</h6>
