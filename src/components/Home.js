@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import image from '../assets/cartoon.jpeg';
 
 export default function Home() {

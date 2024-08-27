@@ -1,7 +1,16 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from './redux/Action'; 
 
 const Contact = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.data);
+
+  const handleFetchData = () => {
+    dispatch(fetchData());
+  };
+
   return (
     <div className='container-fluid'
       style={{
