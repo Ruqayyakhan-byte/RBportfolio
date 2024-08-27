@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from './redux/Action'; 
+import { fetchData } from '../redux/Action'; 
 
 const Contact = () => {
   const dispatch = useDispatch();
