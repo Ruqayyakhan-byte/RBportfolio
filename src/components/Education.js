@@ -18,19 +18,19 @@ const Education = () => {
   } else if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
-
+console.log(education)
 
   return (
     <div className='container-fluid' style={{backgroundColor: '#1d5463', color: 'black', padding: '20px',paddingLeft:'80px' }}>
       <h1>Education</h1>
     <div>
-      <section style={{ marginTop: '20px' }}>
-        <h3>{ education[0]?.title}</h3>
-        <p><strong>Institution:</strong>{education[0]?.institution}</p>
-        <p><strong>Dates:</strong> {education[0]?.dates}</p>
-        <p><strong>Key Courses:</strong> {education[0]?.keyCourses}</p>
-        <p><strong>Achievements:</strong>{education[0]?.achievements}</p>
-      </section>
+      {Array.isArray(education) && education.length>0 && education.map((edu,index)=><section key={index} style={{ marginTop: '20px' }}>
+        <h3>{ edu?.title}</h3>
+        <p><strong>Institution:</strong>{edu?.institution}</p>
+        <p><strong>Dates:</strong> {edu?.dates}</p>
+        <p><strong>Key Courses:</strong> {edu?.keyCourses}</p>
+        <p><strong>Achievements:</strong>{edu.achievements}</p>
+      </section>)}
       </div>
       <section style={{ marginTop: '20px' }}>
         <h3>Certifications</h3>
