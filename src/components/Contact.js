@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../redux/Action'; 
+import { fetchData } from '../redux/dataSlice';
 
 const Contact = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.data);
+  const {contact} = useSelector((state) => state.data.value);
+  const status = useSelector((state) => state.data.status);
+  const error = useSelector((state) => state.data.error);
 
-  const handleFetchData = () => {
-    dispatch(fetchData());
-  };
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchData());
+    }
+  }, [status, dispatch]);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  } else if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className='container-fluid'
       style={{
-         backgroundColor: '#1d5463',minHeight: '100vh', padding: '20px'
+        backgroundColor: '#1d5463', minHeight: '100vh', padding: '20px'
       }}
     >
       <h1 style={{ color: 'black' }}>Contact Me</h1>
+      
       <Form>
         <Form.Group controlId="formName">
           <Form.Label style={{ color: 'black' }}>Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter your name"
+            style={{ width: '300px' }} 
           />
         </Form.Group>
 
@@ -32,19 +44,23 @@ const Contact = () => {
           <Form.Control
             type="email"
             placeholder="Enter your email"
+            style={{ width: '300px' }} 
           />
         </Form.Group>
 
         <Form.Group controlId="formMessage">
-          <Form.Label style={{ color: 'black' }}>Message</Form.Label>
+          <Form.Label style={{ color: 'black'}}>Message</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}
             placeholder="Your message"
+            style={{ width: '300px' }} 
           />
         </Form.Group>
 
-        <Button variant="dark" type="submit">
+        <Button variant="dark" type="submit"
+        style={{ marginTop: '15px' }} 
+        >
           Send
         </Button>
       </Form>

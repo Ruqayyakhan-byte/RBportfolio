@@ -10,12 +10,18 @@ function App() {
   return (   
     <Router>
       <NavigationBar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div id="home">
+        <Home />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="education">
+        <Education />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
     </Router>
   );
 }

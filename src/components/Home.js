@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image from '../assets/cartoon.jpeg';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from '../redux/dataSlice';
 
-export default function Home() {
+const Home = () => {
+  const dispatch = useDispatch();
+  const { home } = useSelector((state) => state.data.value);
+  const status = useSelector((state) => state.data.status);
+  const error = useSelector((state) => state.data.error);
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchData());
+    }
+  }, [status, dispatch]);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  } else if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
   return (
-    <div 
-      className='container-fluid' 
-      style={{ backgroundColor: '#1d5463', padding: '20px', minHeight: '100vh',paddingLeft:'80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+    <div
+      className='container-fluid'
+      style={{ backgroundColor: '#1d5463', padding: '20px', minHeight: '100vh', paddingLeft: '80px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
     >
       <div style={{ flex: 1 }}>
         <h6>Hello, Welcome</h6>
         <h1>I am Ruqayya Bibi</h1>
         <p>
-          I’m a front-end developer with a strong focus on creating efficient and elegant web applications.
+          {home?.description}
         </p>
         <p>
-          I have experience in building projects using React, Bootstrap, and JavaScript.
+          {home?.skills}
         </p>
       </div>
 
-      <div style={{ flex: '0 0 auto', marginLeft: '20px',marginTop: '-200px'  }}>
+      <div style={{ flex: '0 0 auto', marginLeft: '20px', marginTop: '-200px' }}>
         <img
           src={image}
           alt="Ruqayya Bibi Cartoon"
@@ -29,3 +46,4 @@ export default function Home() {
   );
 }
 
+export default Home;

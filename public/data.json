@@ -1,20 +1,27 @@
 {
-    "about": {
-      "description": "I’m a front-end developer with a strong focus on creating efficient and elegant web applications.",
-      "skills": ["React", "JavaScript", "CSS"]
-    },
-    "education": [
-      {
-        "title": "Bachelor of Science in Information Technology",
-        "institution": "Rawalpindi Women University",
-        "dates": "2021 – 2025",
-        "keyCourses": ["Web Development", "Algorithms", "Data Structures"],
-        "achievements": "Graduated with honors"
-      }
-    ],
-    "contact": {
-      "email": "cocomelon21@gmail.com",
-      "text": "bibi"
+  "home": {
+    "description": "I’m a front-end Developer with a strong focus on creating efficient and elegant web applications.",
+    "skills": ["I have experience in building projects using React, Bootstrap, and JavaScript."]
+  },
+  "education": [
+    {
+      "title": "Bachelor of Science in Information Technology",
+      "institution": "Rawalpindi Women University",
+      "dates": "2021 – 2025",
+      "keyCourses": ["Web Development", "Algorithms", "Data Structures", "Database Management"],
+      "achievements": "Graduated with honors, completed a capstone project on front-end development."
     }
+  ],
+  "certifications": [
+    {
+      "title": "Certified React Developer",
+      "issuingOrganization": "",
+      "date": ""
+    }
+  ],
+  "contact": {
+    "name": "",
+    "email": "",
+    "message": ""
   }
-  
+}

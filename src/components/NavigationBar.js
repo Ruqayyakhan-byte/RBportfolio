@@ -1,12 +1,11 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../assets/queenlogo.jpeg';
-import { NavLink } from 'react-router-dom';
 
 const NavigationBar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="/">
+      <Navbar.Brand href="#home">
         <img
           src={logo}
           height="50"
@@ -16,15 +15,12 @@ const NavigationBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <NavLink to="/" className="nav-link">Home</NavLink>
-          <NavLink to="/about" className="nav-link">About</NavLink>
-          <NavLink to="/education" className="nav-link">Education</NavLink>
-          <NavLink to="/contact" className="nav-link">Contact</NavLink>
+          <Nav.Link href="#home" className="nav-link">Home</Nav.Link>
+          <Nav.Link href="#about" className="nav-link">About</Nav.Link>
+          <Nav.Link href="#education" className="nav-link">Education</Nav.Link>
+          <Nav.Link href="#contact" className="nav-link">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-
-
-      
     </Navbar>
   );
 };
